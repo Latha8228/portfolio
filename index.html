@@ -1,80 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ganala Lakshmi Kantham | Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Student Portfolio</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f2f5ff;
+    color:#222;
+}
+
+/* HEADER */
+header{
+    width:100%;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+}
+
+.profile-img{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:5px solid white;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+header h1{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+    opacity:0.9;
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    margin-bottom:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card h2{
+    margin-bottom:20px;
+    color:#4f46e5;
+}
+
+/* LINKS */
+.links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.link-btn{
+    text-decoration:none;
+    background:#4f46e5;
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    text-align:center;
+    transition:0.3s;
+    font-weight:500;
+}
+
+.link-btn:hover{
+    background:#312e81;
+    transform:translateY(-3px);
+}
+
+/* SKILLS */
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.skill{
+    background:#eef2ff;
+    padding:10px 18px;
+    border-radius:30px;
+    color:#4338ca;
+    font-weight:500;
+}
+
+/* PROJECTS */
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.project{
+    background:#f9fafb;
+    padding:20px;
+    border-radius:15px;
+    border-left:5px solid #4f46e5;
+}
+
+.project h3{
+    margin-bottom:10px;
+}
+
+.project p{
+    line-height:1.6;
+    margin-bottom:12px;
+}
+
+.project a{
+    text-decoration:none;
+    background:#4f46e5;
+    color:white;
+    padding:10px 16px;
+    border-radius:10px;
+    display:inline-block;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th, table td{
+    padding:14px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+table th{
+    background:#4f46e5;
+    color:white;
+}
+
+/* CERTIFICATES */
+.certificates{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.certificate{
+    background:#f9fafb;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.certificate a{
+    display:inline-block;
+    margin-top:12px;
+    text-decoration:none;
+    background:#4f46e5;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111827;
+    color:white;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header h1{
+        font-size:28px;
+    }
+    .container{
+        width:95%;
+    }
+}
+
+</style>
 </head>
+
 <body>
-<div id="progress"></div>
-<nav class="navbar">
-<div class="logo">GK</div>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#certificates">Certificates</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
 
-<section class="hero" id="home">
-<div class="hero-left">
-<h3>Hello 👋 I'm</h3>
-<h1>GANALA LAKSHMI KANTHAM</h1>
-<h2><span id="typing"></span></h2>
-<p>I am a passionate student interested in Web Development, Software Engineering, Python Programming and Artificial Intelligence. I enjoy building real-world projects and solving problems through technology.</p>
-<div class="hero-buttons">
-<a href="#projects" class="btn">View Projects</a>
-<a href="certificates.pdf" class="btn outline" target="_blank">Certificates</a>
+<!-- HEADER -->
+<header>
+    <img src="profile1.png" class="profile-img">
+    <h1>GANALA LAKSHMI KANTHAM</h1>
+    <p>Student | Web Developer | Problem Solver</p>
+</header>
+
+<div class="container">
+
+    <!-- ABOUT -->
+    <div class="card">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate student interested in web development, software engineering,
+            and building real-world projects that solve problems.
+        </p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="card">
+        <h2>Profile Links</h2>
+        <div class="links">
+
+            <a class="link-btn" href="https://github.com/Latha8228" target="_blank">GitHub</a>
+            <a class="link-btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            <a class="link-btn" href="https://leetcode.com" target="_blank">LeetCode</a>
+            <a class="link-btn" href="https://www.hackerrank.com" target="_blank">HackerRank</a>
+            <a class="link-btn" href="https://www.codechef.com" target="_blank">CodeChef</a>
+
+        </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="card">
+        <h2>Education</h2>
+        <table>
+            <tr>
+                <th>Qualification</th>
+                <th>Institution</th>
+                <th>Year</th>
+                <th>CGPA/%</th>
+            </tr>
+            <tr>
+                <td>B.Tech</td>
+                <td>Ideal Institute of Technology</td>
+                <td>2023-2027</td>
+                <td>8.5</td>
+            </tr>
+            <tr>
+                <td>Intermediate</td>
+                <td>Vijaya Gayatri Junior College</td>
+                <td>2021-2023</td>
+                <td>91.4%</td>
+            </tr>
+            <tr>
+                <td>SSC</td>
+                <td>GMC BMC High School</td>
+                <td>2021</td>
+                <td>8.5</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="card">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+        </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="card">
+        <h2>Projects</h2>
+
+        <div class="project-grid">
+
+            <div class="project">
+                <h3>Hospital Management System</h3>
+                <p>
+                    Web-based system to manage patients, appointments, doctors and hospital operations efficiently.
+                </p>
+                <a href="https://dwarapuraviteja.github.io/Hospital-management-system/" target="_blank">
+                    View Project
+                </a>
+            </div>
+
+            <div class="project">
+                <h3>Virtual Agent (SLA Prediction)</h3>
+                <p>
+                    AI chatbot for IT ticket support with SLA breach prediction and intelligent responses using Python AI.
+                </p>
+                <a href="https://virtual-agent-ow1e.onrender.com/" target="_blank">
+                    View Project
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CERTIFICATES -->
+    <div class="card">
+        <h2>Certificates</h2>
+
+        <div class="certificates">
+            <div class="certificate">
+                <h3>My Certificates</h3>
+                <a href="certificates.pdf" target="_blank">View PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="card">
+        <h2>Contact</h2>
+        <p>Email: lathaganala143@gmail.con</p>
+        <p>Phone: +91 9392031406</p>
+        <p>Location: Kakinada,Andhra Pradesh</p>
+    </div>
+
 </div>
-<div class="social-icons">
-<a href="https://github.com/Latha8228"><i class="fab fa-github"></i></a>
-<a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
-<a href="https://leetcode.com"><i class="fas fa-code"></i></a>
-<a href="https://www.hackerrank.com"><i class="fab fa-hackerrank"></i></a>
-</div>
-</div>
-<div class="hero-right"><img src="profile1.png" alt="Profile"></div>
-</section>
 
-<section id="about" class="glass"><h2>About Me</h2><p>I am a passionate student interested in web development, software engineering and building real-world projects that solve problems. I continuously improve my programming, problem-solving and technical skills by learning modern technologies and developing practical applications.</p></section>
+<footer>
+    © 2026 Ganala Lakshmi Kantham | Student Portfolio
+</footer>
 
-<section id="education" class="glass"><h2>Education</h2>
-<div class="timeline-item"><h3>B.Tech</h3><p>Ideal Institute of Technology (2023-2027) - CGPA 8.5</p></div>
-<div class="timeline-item"><h3>Intermediate</h3><p>Vijaya Gayatri Junior College (2021-2023) - 91.4%</p></div>
-<div class="timeline-item"><h3>SSC</h3><p>GMC BMC High School (2021) - CGPA 8.5</p></div>
-</section>
-
-<section id="skills" class="glass">
-<h2>Skills</h2>
-<div class="skill"><span>HTML</span><div class="bar"><div class="fill html"></div></div></div>
-<div class="skill"><span>CSS</span><div class="bar"><div class="fill css"></div></div></div>
-<div class="skill"><span>JavaScript</span><div class="bar"><div class="fill js"></div></div></div>
-<div class="skill"><span>Python</span><div class="bar"><div class="fill python"></div></div></div>
-<div class="skill"><span>Java</span><div class="bar"><div class="fill java"></div></div></div>
-</section>
-
-<section id="projects" class="glass"><h2>Projects</h2>
-<div class="project-grid">
-<div class="project-card"><h3>Hospital Management System</h3><p>Web-based system to manage patients, appointments, doctors and hospital operations efficiently.</p><a href="https://dwarapuraviteja.github.io/Hospital-management-system/">View Project</a></div>
-<div class="project-card"><h3>Virtual Agent (SLA Prediction)</h3><p>AI chatbot for IT ticket support with SLA breach prediction and intelligent responses using Python AI.</p><a href="https://virtual-agent-ow1e.onrender.com/">View Project</a></div>
-</div></section>
-
-<section id="certificates" class="glass"><h2>Certificates</h2><div class="certificate-card"><h3>My Certificates</h3><a href="certificates.pdf">View PDF</a></div></section>
-
-<section id="contact" class="glass"><h2>Contact</h2><p>Email: lathaganala143@gmail.com</p><p>Phone: +91 9392031406</p><p>Location: Kakinada, Andhra Pradesh</p></section>
-
-<footer>© 2026 Ganala Lakshmi Kantham | Portfolio</footer>
-<button id="topBtn"><i class="fa-solid fa-arrow-up"></i></button>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="script.js"></script>
-</body></html>
+</body>
+</html>
